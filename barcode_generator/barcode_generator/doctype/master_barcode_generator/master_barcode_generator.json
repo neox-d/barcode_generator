@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:qr_number",
+ "creation": "2024-09-12 17:20:55.680369",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_bea8",
+  "amended_from",
+  "qr_number",
+  "item_code",
+  "remark",
+  "company",
+  "column_break_rejw",
+  "date",
+  "shift",
+  "qty",
+  "get_serial_no",
+  "master_barcode_details_section",
+  "master_barcode_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_bea8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Master Barcode Generator",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "qr_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "QR Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rejw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "default": "Day",
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "Shift",
+   "options": "Day\nNight"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Qty",
+   "reqd": 1
+  },
+  {
+   "depends_on": "qty",
+   "fieldname": "get_serial_no",
+   "fieldtype": "Button",
+   "label": "Get Serial No"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "master_barcode_details_section",
+   "fieldtype": "Section Break",
+   "label": "Master Barcode Details"
+  },
+  {
+   "fieldname": "master_barcode_details",
+   "fieldtype": "Table",
+   "label": "Master Barcode Details",
+   "options": "Master Barcode Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-09-12 17:28:13.143527",
+ "modified_by": "Administrator",
+ "module": "Barcode Generator",
+ "name": "Master Barcode Generator",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

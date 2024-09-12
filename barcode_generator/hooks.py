@@ -242,3 +242,8 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {"dt": "Custom Field", "filters": [["module", "in", ["barcode"]]]},
+    {"dt": "Print Format", "filters": [["module", "in", ["barcode"]]]},
+    {"dt": "Number Card", "filters": [["module", "in", ["barcode"]]]},
+]

@@ -1,0 +1,57 @@
+[
+{
+    "add_total_row": 0,
+    "columns": [],
+    "disabled": 0,
+    "docstatus": 0,
+    "doctype": "Report",
+    "filters": [
+    {
+    "default": null,
+    "fieldname": "Item_code",
+    "fieldtype": "Link",
+    "label": "Item",
+    "mandatory": 0,
+    "options": "Item",
+    "parent": "Item wise bar-code",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+    }
+    ],
+    "is_standard": "Yes",
+    "javascript": null,
+    "json": null,
+    "letter_head": "Company Logo",
+    "modified": "2024-04-23 10:05:37.946133",
+    "module": "barcode",
+    "name": "Item wise bar-code",
+    "prepared_report": 0,
+    "query": "SELECT \n    item_code as 'Item',\n    COUNT(*) AS 'Total Records',\n    SUM(CASE WHEN custom_barcode_generator = 1 THEN 1 ELSE 0 END) AS 'Generated Barcodes',\n    SUM(CASE WHEN custom_barcode_generator = 0 THEN 1 ELSE 0 END) AS 'Not Generated Barcodes'\nFROM \n    `tabSerial No`\nGROUP BY \n    item_code; \n",
+    "ref_doctype": "Serial No",
+    "reference_report": null,
+    "report_name": "Item wise bar-code",
+    "report_script": null,
+    "report_type": "Query Report",
+    "roles": [
+    {
+    "parent": "Item wise bar-code",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Item Manager"
+    },
+    {
+    "parent": "Item wise bar-code",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+    },
+    {
+    "parent": "Item wise bar-code",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+    }
+    ]
+}
+]
