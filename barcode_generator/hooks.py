@@ -242,4 +242,7 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
-fixtures = ["Custom Field"]
+# fixtures = [{"doctype": "Custom Field", "filters": [["module", "in", ["barcode_generator"]]]}, 
+#             {"doctype": "Client Script", "filters": [["module" , "in" , ["barcode_generator"]]]}]
+
+fixtures = ['Custom Field', 'Client Script']

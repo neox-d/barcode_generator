@@ -37,3 +37,26 @@ def set_status_untick(nm):
 	data=frappe.json.loads(nm)
 	for i in data:
 		frappe.db.set_value("Serial No",i['serial_no'],"custom_barcode_generator",0)
+
+
+@frappe.whitelist()
+@frappe.whitelist()
+def get_items(qr_number):
+	
+	item_code = frappe.db.get_all("Master Barcode Generator", filters={'name': qr_number}, fields=['item_code'])
+	
+	if (item_code):
+		stock_uom = frappe.db.get_all("Item", filters={'item_code': item_code[0].item_code }, fields=['stock_uom'])
+		data = frappe.db.get_all("Master Barcode Details", filters={'parent': qr_number }, fields=['item_name', 'serial_no'], order_by='modified desc')
+		return [data, item_code, stock_uom]
+	
+	else:
+		serial_no = frappe.db.get_all("Serial No", filters={'name': qr_number}, fields=['serial_no', 'custom_barcode_generator', 'item_code', 'item_name', 'status'])
+		if (serial_no):
+			if (serial_no[0]['custom_barcode_generator'] == 1):
+						stock_uom = frappe.db.get_all("Item", filters={'item_code': serial_no[0]['item_code'] }, fields=['stock_uom'])
+						return [serial_no, stock_uom]
+			frappe.msgprint("Yaay! Item found")
+			
+		else:
+			frappe.msgprint("Scanned/entered item not found")
