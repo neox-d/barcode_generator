@@ -59,4 +59,4 @@ def get_items(qr_number):
 			frappe.msgprint("Yaay! Item found")
 			
 		else:
-			frappe.msgprint("Scanned/entered item not found")
+			frappe.msgprint("Scanned item not found")
