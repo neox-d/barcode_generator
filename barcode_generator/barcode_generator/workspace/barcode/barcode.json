@@ -1,17 +1,17 @@
 {
  "charts": [],
- "content": "[{\"id\":\"S8r5gX8ic1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Barcode Administrator</span>\",\"col\":12}},{\"id\":\"cfAnL22Htc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Serial No.\",\"col\":4}},{\"id\":\"NzeJp5iNXC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bar-code Not Generated Serial No\",\"col\":4}},{\"id\":\"UYHDGTKET2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bar-code Generated Serial No\",\"col\":4}},{\"id\":\"DvMNu57Gpp\",\"type\":\"paragraph\",\"data\":{\"text\":\"Barcode Transactions\",\"col\":4}},{\"id\":\"oPmdbjov34\",\"type\":\"paragraph\",\"data\":{\"text\":\"Report\",\"col\":8}},{\"id\":\"7te0oO4DY3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":4}},{\"id\":\"xlvy80WNzh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item-wise Barcode\",\"col\":3}},{\"id\":\"XMoWvJxa3H\",\"type\":\"spacer\",\"data\":{\"col\":5}},{\"id\":\"3G4OBwYc5P\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Serial No\",\"col\":3}},{\"id\":\"6vO5ACgKU3\",\"type\":\"spacer\",\"data\":{\"col\":9}},{\"id\":\"XP0f05W5SQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bar-code Generator\",\"col\":3}},{\"id\":\"RyNMYo5c0j\",\"type\":\"spacer\",\"data\":{\"col\":9}},{\"id\":\"H3Pbia8zGa\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Master Barcode Generator\",\"col\":3}}]",
+ "content": "[{\"id\":\"cfAnL22Htc\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Serial No.\",\"col\":4}},{\"id\":\"NzeJp5iNXC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bar-code Not Generated Serial No\",\"col\":4}},{\"id\":\"UYHDGTKET2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Bar-code Generated Serial No\",\"col\":4}},{\"id\":\"DvMNu57Gpp\",\"type\":\"paragraph\",\"data\":{\"text\":\"Barcode Transactions\",\"col\":4}},{\"id\":\"oPmdbjov34\",\"type\":\"paragraph\",\"data\":{\"text\":\"Report\",\"col\":8}},{\"id\":\"7te0oO4DY3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":4}},{\"id\":\"xlvy80WNzh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item-wise Barcode\",\"col\":3}},{\"id\":\"XMoWvJxa3H\",\"type\":\"spacer\",\"data\":{\"col\":5}},{\"id\":\"3G4OBwYc5P\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Serial No\",\"col\":3}},{\"id\":\"6vO5ACgKU3\",\"type\":\"spacer\",\"data\":{\"col\":9}},{\"id\":\"XP0f05W5SQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Bar-code Generator\",\"col\":3}},{\"id\":\"RyNMYo5c0j\",\"type\":\"spacer\",\"data\":{\"col\":9}},{\"id\":\"H3Pbia8zGa\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Master Barcode Generator\",\"col\":3}}]",
  "creation": "2024-09-12 17:55:01.977690",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
- "icon": "assets",
- "idx": 0,
- "indicator_color": "green",
+ "icon": "scan",
+ "idx": 1,
+ "indicator_color": "",
  "is_hidden": 0,
- "label": "Barcode Administrator",
+ "label": "Barcode",
  "links": [
   {
    "hidden": 0,
@@ -65,10 +65,10 @@
    "type": "Link"
   }
  ],
- "modified": "2024-09-12 18:44:38.335675",
+ "modified": "2024-09-23 12:55:45.012072",
  "modified_by": "Administrator",
  "module": "Barcode Generator",
- "name": "Barcode Administrator",
+ "name": "Barcode",
  "number_cards": [
   {
    "label": "Total Serial No.",
@@ -130,5 +130,5 @@
    "type": "Report"
   }
  ],
- "title": "Barcode Administrator"
+ "title": "Barcode"
 }
