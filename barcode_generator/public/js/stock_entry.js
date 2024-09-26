@@ -89,7 +89,7 @@ frappe.ui.form.on('Stock Entry', {
                     child_create1.item_name = data[0][0]['item_name'];
                     child_create1.uom = data[1][0]['stock_uom'];
 
-                    if (frm.doc.items[0].qty == 0) {
+                    if ((frm.doc.items.length > 0) && (typeof(frm.doc.items[0].qty) === 'undefined')) {
                         frm.doc.items.splice(0, 1);
                         child_create1.idx = 1
                     }
@@ -162,7 +162,7 @@ frappe.ui.form.on('Stock Entry', {
                     child_create.item_name = data[0][0]['item_name'];
 
                     child_create.uom = data[2][0]['stock_uom'];
-                    if (frm.doc.items[0].qty == 0) {
+                    if ((frm.doc.items.length > 0) && (typeof(frm.doc.items[0].qty) === 'undefined')) {
                         frm.doc.items.splice(0, 1);
                         child_create.idx = 1
                     }
@@ -279,7 +279,7 @@ custom_barcode_scanner(frm) {
 
                     console.log(child_create1);
 
-                    if (frm.doc.items[0].qty == 0) {
+                    if ((frm.doc.items.length > 0) && (typeof(frm.doc.items[0].qty) === 'undefined')) {
                         frm.doc.items.splice(0, 1);
                         child_create1.idx = 1
                     }
@@ -352,15 +352,20 @@ custom_barcode_scanner(frm) {
                     child_create.item_name = data[0][0]['item_name'];
                     child_create.uom = data[2][0]['stock_uom'];
 
-                    if (frm.doc.items[0].qty == 0) {
+
+                    console.log((frm.doc.items.length > 0) && (typeof(frm.doc.items[0].qty) === 'undefined'));
+                    if ((frm.doc.items.length > 0) && (typeof(frm.doc.items[0].qty) === 'undefined')) {
                         frm.doc.items.splice(0, 1);
                         child_create.idx = 1
+                        console.log(child_create);
                     }
+
+                    frm.refresh_field('items');
+
                     
                     
                     sessionStorage.setItem(frm.doc.custom_barcode_scanner, child_create.name);
                     
-                    frm.refresh_field('items');
                 }
 
             }
