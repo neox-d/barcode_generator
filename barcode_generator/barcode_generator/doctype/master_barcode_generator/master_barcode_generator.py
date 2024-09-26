@@ -56,7 +56,7 @@ def get_items(qr_number):
 			if (serial_no[0]['custom_barcode_generator'] == 1):
 						stock_uom = frappe.db.get_all("Item", filters={'item_code': serial_no[0]['item_code'] }, fields=['stock_uom'])
 						return [serial_no, stock_uom]
-			frappe.msgprint("Yaay! Item found")
+			frappe.msgprint("Barcode not generated for this item")
 			
 		else:
 			frappe.msgprint("Scanned item not found")

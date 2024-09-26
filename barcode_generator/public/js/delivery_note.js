@@ -85,8 +85,10 @@ frappe.ui.form.on('Delivery Note', {
                     child_create1.item_name = data[0][0]['item_name'];
                     child_create1.uom = data[1][0]['stock_uom'];
 
-                    frm.doc.items.splice(0, 1);
-                    child_create1.idx = 1
+                    if (frm.doc.items[0].qty == 0) {
+                        frm.doc.items.splice(0, 1);
+                        child_create.idx = 1
+                    }
                     
                     sessionStorage.setItem(data.decodedText, child_create1.name);
                     frm.refresh_field('items');
@@ -152,8 +154,10 @@ frappe.ui.form.on('Delivery Note', {
                     child_create.item_name = data[0][0]['item_name'];
                     child_create.uom = data[2][0]['stock_uom'];
 
-                    frm.doc.items.splice(0, 1);
-                    child_create.idx = 1
+                    if (frm.doc.items[0].qty == 0) {
+                        frm.doc.items.splice(0, 1);
+                        child_create.idx = 1
+                    }
                     
                     sessionStorage.setItem(data.decodedText, child_create.name);
                     
@@ -264,8 +268,10 @@ custom_barcode_scanner(frm) {
 
                     console.log(child_create1);
 
-                    frm.doc.items.splice(0, 1);
-                    child_create1.idx = 1
+                    if (frm.doc.items[0].qty == 0) {
+                        frm.doc.items.splice(0, 1);
+                        child_create.idx = 1
+                    }
                     
                     sessionStorage.setItem(frm.doc.custom_barcode_scanner, child_create1.name);
                     frm.refresh_field('items');
@@ -331,8 +337,11 @@ custom_barcode_scanner(frm) {
                     child_create.item_name = data[0][0]['item_name'];
                     child_create.uom = data[2][0]['stock_uom'];
 
-                    frm.doc.items.splice(0, 1);
-                    child_create.idx = 1
+
+                    if (frm.doc.items[0].qty == 0) {
+                        frm.doc.items.splice(0, 1);
+                        child_create.idx = 1
+                    }
                     
                     sessionStorage.setItem(frm.doc.custom_barcode_scanner, child_create.name);
                     

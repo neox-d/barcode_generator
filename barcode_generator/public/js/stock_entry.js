@@ -60,6 +60,8 @@ frappe.ui.form.on('Stock Entry', {
                     if (serial_nos.search(data[0][0].serial_no) == -1) {
                         console.log('All Ok');
                         frm.doc.items[index].qty += 1;
+                        frm.doc.items[index].transfer_qty += 1;
+                        frm.doc.items[index].conversion_factor = 1;
                         frm.doc.items[index].serial_no += '\n'
                         frm.doc.items[index].serial_no += data[0][0].serial_no;
                     } else {
@@ -82,11 +84,15 @@ frappe.ui.form.on('Stock Entry', {
                     child_create1.use_serial_batch_fields = 1
                     child_create1.serial_no = data[0][0].serial_no;
                     child_create1.qty = 1;
+                    child_create1.transfer_qty = 1;
+                    child_create1.conversion_factor = 1;
                     child_create1.item_name = data[0][0]['item_name'];
                     child_create1.uom = data[1][0]['stock_uom'];
 
-                    frm.doc.items.splice(0, 1);
-                    child_create1.idx = 1
+                    if (frm.doc.items[0].qty == 0) {
+                        frm.doc.items.splice(0, 1);
+                        child_create1.idx = 1
+                    }
                     
                     sessionStorage.setItem(data.decodedText, child_create1.name);
                     frm.refresh_field('items');
@@ -126,6 +132,8 @@ frappe.ui.form.on('Stock Entry', {
                     if (serial_nos1.search(data[0][0].serial_no) == -1) {
                         console.log('All Ok');
                         frm.doc.items[index].qty += data[0].length;
+                        frm.doc.items[index].transfer_qty += data[0].length;
+                        frm.doc.items[index].conversion_factor = 1;
                         frm.doc.items[index].serial_no += '\n'
                         frm.doc.items[index].serial_no += serial_no;
                     } else {
@@ -149,12 +157,15 @@ frappe.ui.form.on('Stock Entry', {
                     child_create.use_serial_batch_fields = 1
                     child_create.serial_no = serial_no;
                     child_create.qty = data[0].length;
+                    child_create.transfer_qty = data[0].length;
+                    child_create.conversion_factor = 1;
                     child_create.item_name = data[0][0]['item_name'];
-                    child_create.uom = data[2][0]['stock_uom'];
 
-                    frm.doc.items.splice(0, 1);
-                    child_create.idx = 1
-                    
+                    child_create.uom = data[2][0]['stock_uom'];
+                    if (frm.doc.items[0].qty == 0) {
+                        frm.doc.items.splice(0, 1);
+                        child_create.idx = 1
+                    }
                     sessionStorage.setItem(data.decodedText, child_create.name);
                     
                     frm.refresh_field('items');
@@ -237,6 +248,8 @@ custom_barcode_scanner(frm) {
                     if (serial_nos.search(data[0][0].serial_no) == -1) {
                         console.log('All Ok');
                         frm.doc.items[index].qty += 1;
+                        frm.doc.items[index].transfer_qty += 1;
+                        frm.doc.items[index].conversion_factor = 1;
                         frm.doc.items[index].serial_no += '\n'
                         frm.doc.items[index].serial_no += data[0][0].serial_no;
                     } else {
@@ -259,13 +272,17 @@ custom_barcode_scanner(frm) {
                     child_create1.use_serial_batch_fields = 1
                     child_create1.serial_no = data[0][0].serial_no;
                     child_create1.qty = 1;
+                    child_create1.transfer_qty = 1;
+                    child_create1.conversion_factor = 1;
                     child_create1.item_name = data[0][0]['item_name'];
                     child_create1.uom = data[1][0]['stock_uom'];
 
                     console.log(child_create1);
 
-                    frm.doc.items.splice(0, 1);
-                    child_create1.idx = 1
+                    if (frm.doc.items[0].qty == 0) {
+                        frm.doc.items.splice(0, 1);
+                        child_create1.idx = 1
+                    }
                     
                     sessionStorage.setItem(frm.doc.custom_barcode_scanner, child_create1.name);
                     frm.refresh_field('items');
@@ -305,6 +322,8 @@ custom_barcode_scanner(frm) {
                     if (serial_nos1.search(data[0][0].serial_no) == -1) {
                         console.log('All Ok');
                         frm.doc.items[index].qty += data[0].length;
+                        frm.doc.items[index].transfer_qty += data[0].length;
+                        frm.doc.items[index].conversion_factor = 1;
                         frm.doc.items[index].serial_no += '\n'
                         frm.doc.items[index].serial_no += serial_no;
                     } else {
@@ -328,11 +347,16 @@ custom_barcode_scanner(frm) {
                     child_create.use_serial_batch_fields = 1
                     child_create.serial_no = serial_no;
                     child_create.qty = data[0].length;
+                    child_create.transfer_qty = data[0].length;
+                    child_create.conversion_factor = 1;
                     child_create.item_name = data[0][0]['item_name'];
                     child_create.uom = data[2][0]['stock_uom'];
 
-                    frm.doc.items.splice(0, 1);
-                    child_create.idx = 1
+                    if (frm.doc.items[0].qty == 0) {
+                        frm.doc.items.splice(0, 1);
+                        child_create.idx = 1
+                    }
+                    
                     
                     sessionStorage.setItem(frm.doc.custom_barcode_scanner, child_create.name);
                     
