@@ -8,7 +8,7 @@ app_license = "mit"
 # Apps
 # ------------------
 
-# required_apps = []
+required_apps = ['erpnext']
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -248,4 +248,4 @@ export_python_type_annotations = True
 # fixtures = [{"doctype": "Custom Field", "filters": [["module", "in", ["barcode_generator"]]]}, 
 #             {"doctype": "Client Script", "filters": [["module" , "in" , ["barcode_generator"]]]}]
 
-fixtures = ['Custom Field', 'Client Script']
+fixtures = ['Custom Field', 'Client Script', 'Print Format']
